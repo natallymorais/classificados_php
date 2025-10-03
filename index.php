@@ -24,7 +24,9 @@ include_once('header.php');
     if ($resultado && $resultado->num_rows > 0){
         while ($anuncio = $resuldado -> fetch_assoc()) {
             echo "<div class='anuncio-card'>";
+            // htmlspecialchars: protocolo de segurança (xsl) do login do usuario 
             echo "<h3>".htmlspecialchars($anuncio['titulo'])."</h3>";
+            // number_format : formata o número para o real brasileiro
             echo "<p class='preco'>R$ ".number_format($anuncio['preco'], 2, ',',',')."</p>";
             echo "<p class='categoria'>". htmlspecialchars($anuncio['categoria_nome'])."</p>";
 
